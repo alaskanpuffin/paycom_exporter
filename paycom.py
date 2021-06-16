@@ -10,7 +10,7 @@ class Paycom():
     def signIn(self, username, password, code, securityquestion):
         self.browser.open("https://www.paycomonline.net/v4/cl/cl-login.php")
 
-        self.browser.select_form()
+        self.browser.select_form("[name=frmClLogin]")
 
         self.browser["clientcode"] = code
         self.browser["username"] = username
@@ -61,6 +61,6 @@ class Paycom():
 
 
     def getLastSync(self, username, password, code, securityquestion, target):
-        self.signIn(username, password, securityquestion, code)
+        self.signIn(username, password, code, securityquestion)
 
         return self.scrapeLastSync(target)
