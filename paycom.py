@@ -47,7 +47,6 @@ class Paycom():
         lastSync = datetime.strptime(clockDict['lastSync'], "%m/%d/%y %I:%M %p")
         lastSeen = datetime.strptime(clockDict['lastSeen'], "%m/%d/%y %I:%M %p")
 
-        self.paycom['name'] = clockDict['description']
         self.paycom['lastsync'] = clockDict['lastSync']
         self.paycom['lastseen'] = clockDict['lastSeen']
         self.paycom['lastsyncseconds'] = (currentTime - lastSync).total_seconds()
